@@ -25,7 +25,10 @@
       <% @products.each do |product| %>
         <tr class="<%= cycle('bg-green-50', 'bg-white') %>">
           <td class="px-2 py-3">
-            <%= image_tag(product.image, class: 'w-40') %>
+            <%#= image_tag(product.image, class: 'w-40') %>
+            <% if product.image.attached? %>
+              <%= image_tag product.image, class: "w-40" %>
+            <% end %>
           </td>
           <td>
             <h1 class="text-xl font-bold"><%= product.title %></h1>
