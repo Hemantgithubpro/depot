@@ -3,7 +3,9 @@
 one:
   product: two
   cart: one
+  price: 12.22
 
 two:
-  product: two
-  cart: two
+  product: pragprog
+  order: one
+  price: 12.22
