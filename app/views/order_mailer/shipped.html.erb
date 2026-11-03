@@ -1,8 +1,7 @@
-<h1>Order shipped</h1>
+<h3>Pragmatic Order Shipped</h3>
+<p>This is to inform you that we have just shipped your recent order:</p>
 
-<p>Dear <%= @order.name %>,</p>
-
-<p>
-  Thank you for your recent order from The Pragmatic Store.
-  Your order is on its way.
-</p>
+<table class="order_mail">
+  <tr><th colspan="2">Qty</th><th>Description</th></tr>
+  <%= render @order.line_items %>
+</table>

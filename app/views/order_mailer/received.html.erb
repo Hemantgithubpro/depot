@@ -1,4 +1,4 @@
-<h3>Pragmatic Order Confirmation</h3>
+<%# <h3>Pragmatic Order Confirmation</h3>
 <p>
   Thank you for your recent order from The Pragmatic Store.
 </p>
@@ -8,9 +8,19 @@
 
 <table>
   <tr><th colspan="2">Qty</th><th>Description</th></tr>
-  <%= render @order.line_items %>
+  <%#= render @order.line_items %>
 </table>
 
 <p>
   We'll send you a separate email when your order ships.
-</p>
+</p> %>
+
+<h3>Pragmatic Order Confirmation</h3>
+<p>Dear <%= @order.name %>,</p>
+<p>Thank you for your recent order from The Pragmatic Store.</p>
+<p>You ordered the following items:</p>
+
+<table class="order_mail">
+  <tr><th colspan="2">Qty</th><th>Description</th></tr>
+  <%= render @order.line_items %>
+</table>
