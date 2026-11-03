@@ -23,16 +23,18 @@
 
   <div class="my-5">
     <%= form.label :email %>
-    <%= form.text_field :email, class: "input-field" %>
+    <%= form.email_field :email, class: "input-field" %>
   </div>
 
   <div data-controller="payment">
     <div class="my-5">
       <%= form.label :pay_type %>
-      <%= form.select :pay_type, Order.pay_types.keys,
-        { prompt: 'Select a payment method' },
-        'data-payment-target' => 'selection',
-        'data-action' => 'payment#showAdditionalFields', class: "input-field" %>
+      <%= form.select :pay_type,
+          Order.pay_types.keys.map { |key| [t(".pay_types.#{key.parameterize.underscore}"), key] },
+          { prompt: t('.pay_prompt_html') },
+          'data-payment-target' => 'selection',
+          'data-action' => 'payment#showAdditionalFields',
+          class: "input-field" %>
     </div>
 
     <%= render partial: 'check', locals: { form: form } %>
@@ -41,6 +43,7 @@
   </div>
 
   <div class="inline">
-    <%= form.submit "Place Order", class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+    <%= form.submit t('.submit'),
+        class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-green-200 hover:bg-blue-500 text-black inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>

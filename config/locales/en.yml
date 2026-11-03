@@ -43,3 +43,34 @@ en:
       questions: "Questions"
       news: "News"
       contact: "Contact"
+  orders:
+    new:
+      legend: "Please Enter Your Details"
+    form:
+      pay_prompt_html: "Select a payment method"
+      submit: "Place Order"
+      pay_types:
+        check: "Check"
+        credit_card: "Credit card"
+        purchase_order: "Purchase order"
+  activerecord:
+    models:
+      order: "order"
+    attributes:
+      order:
+        address: "Address"
+        name: "Name"
+        email: "Email"
+        pay_type: "Pay type"
+    errors:
+      messages:
+        inclusion: "is not included in the list"
+        blank: "can't be blank"
+  number:
+    currency:
+      format:
+        unit: "$"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format: "%u%n"
