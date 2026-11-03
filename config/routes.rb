@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
-  get "admin" => "admin#index"
+  get "admin/index"
   resource :session
   resources :passwords, param: :token
-  scope "(:locale)", locale: /en|es/ do
-    resources :orders
-    resources :line_items
-    resources :carts
-    root "store#index", as: "store_index", via: :all
-  end
+  resources :orders
+  resources :line_items
+  resources :carts
+  root "store#index", as: "store_index"
   # it routes root url directly to store#index
   resources :products
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

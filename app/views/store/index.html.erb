@@ -2,7 +2,7 @@
   <%= render 'notice'%>
 
   <h1 class="font-bold text-xl mb-6 pb-2 border-b-2">
-    <%= t('.title_html') %>
+    Your Pragmatic Catalog
   </h1>
 
   <%= turbo_stream_from "products"%>
@@ -11,7 +11,7 @@
     <% cache @products do %>
       <% @products.each do |product| %>
         <% cache product do %>
-          <%= render partial: "product", object: product %>
+          <%= render partial: 'product', object: product%>
         <% end %>
       <% end %>
     <% end %>
