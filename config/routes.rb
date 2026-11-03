@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "admin/index"
+  resource :session
+  resources :passwords, param: :token
   resources :orders
   resources :line_items
   resources :carts
