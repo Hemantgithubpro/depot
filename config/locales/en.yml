@@ -29,3 +29,17 @@
 
 en:
   hello: "Hello world"
+
+  store:
+    index:
+      title_html: "Your Pragmatic Catalog"
+    product:
+      add_html: "Add to Cart"
+
+  layouts:
+    application:
+      title: "Pragmatic Bookshelf"
+      home: "Home"
+      questions: "Questions"
+      news: "News"
+      contact: "Contact"
