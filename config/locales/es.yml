@@ -2,7 +2,6 @@ es:
   store:
     index:
       title_html: "Su Cat&aacute;logo de Pragmatic"
-    product:
       add_html: "A&ntilde;adir al Carrito"
   layouts:
     application:
@@ -15,12 +14,30 @@ es:
     new:
       legend: "Por favor, introduzca sus datos"
     form:
+      name: "Nombre"
+      address: "Direcci&oacute;n"
+      email: "E-mail"
+      pay_type: "Tipo de pago"
       pay_prompt_html: "Seleccione un m&eacute;todo de pago"
       submit: "Realizar Pedido"
       pay_types:
         check: "Cheque"
         credit_card: "Tarjeta de Cr&eacute;dito"
         purchase_order: "Orden de Compra"
+      check:
+        routing_number: "N&uacute;mero de Tr&aacute;nsito"
+        account_number: "N&uacute;mero de Cuenta"
+      cc:
+        credit_card_number: "N&uacute;mero de Tarjeta"
+        expiration_date: "Fecha de Expiraci&oacute;n"
+      po:
+        po_number: "N&uacute;mero de Orden"
+  errors:
+    template:
+      body: "Hay problemas con los siguientes campos:"
+      header:
+        one: "1 error ha impedido que este %{model} se guarde"
+        other: "%{count} errores han impedido que este %{model} se guarde"
   activerecord:
     models:
       order: "pedido"
