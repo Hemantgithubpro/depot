@@ -54,14 +54,14 @@ en:
         check: "Check"
         credit_card: "Credit card"
         purchase_order: "Purchase order"
-      check:
-        routing_number: "Routing #"
-        account_number: "Account #"
-      cc:
-        credit_card_number: "CC #"
-        expiration_date: "Expiry"
-      po:
-        po_number: "PO #"
+    check:
+      routing_number: "Routing #"
+      account_number: "Account #"
+    cc:
+      credit_card_number: "CC #"
+      expiration_date: "Expiry"
+    po:
+      po_number: "PO #"
   errors:
     template:
       body: "There were problems with the following fields:"

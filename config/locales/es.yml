@@ -25,14 +25,14 @@ es:
         check: "Cheque"
         credit_card: "Tarjeta de Cr&eacute;dito"
         purchase_order: "Orden de Compra"
-      check:
-        routing_number: "N&uacute;mero de Tr&aacute;nsito"
-        account_number: "N&uacute;mero de Cuenta"
-      cc:
-        credit_card_number: "N&uacute;mero de Tarjeta"
-        expiration_date: "Fecha de Expiraci&oacute;n"
-      po:
-        po_number: "N&uacute;mero de Orden"
+    check:
+      routing_number: "N&uacute;mero de Tr&aacute;nsito"
+      account_number: "N&uacute;mero de Cuenta"
+    cc:
+      credit_card_number: "N&uacute;mero de Tarjeta"
+      expiration_date: "Fecha de Expiraci&oacute;n"
+    po:
+      po_number: "N&uacute;mero de Orden"
   errors:
     template:
       body: "Hay problemas con los siguientes campos:"
