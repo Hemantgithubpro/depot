@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_11_04_104736) do
+ActiveRecord::Schema[8.1].define(version: 2026_11_04_110605) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -108,7 +108,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_04_104736) do
     t.string "email"
     t.string "subject"
     t.text "body"
-    t.bigint "order_id", null: false
+    t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id"], name: "index_support_requests_on_order_id"
