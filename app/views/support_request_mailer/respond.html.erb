@@ -1,3 +1,5 @@
-<p>Dear <%= @support_request.email %>,</p>
-<p>Thank you for contacting us. Here is our response:</p>
 <%= @support_request.response %>
+<hr>
+<blockquote>
+  <%= @support_request.body %>
+</blockquote>
