@@ -1,4 +1,3 @@
-include CurrentCart
 class LineItemsController < ApplicationController
   allow_unauthenticated_access only: %i[ create ]
   include CurrentCart
@@ -60,7 +59,7 @@ class LineItemsController < ApplicationController
     @line_item.destroy!
 
     respond_to do |format|
-      format.html { redirect_to line_items_path, notice: "Line item was successfully destroyed.", status: :see_other }
+      format.html { redirect_to store_index_url, notice: "Line item was successfully destroyed.", status: :see_other }
       format.json { head :no_content }
     end
   end
