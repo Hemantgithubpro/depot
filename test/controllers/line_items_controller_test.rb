@@ -28,27 +28,27 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show line_item" do
-    get line_item_url(@line_item)
+    get line_item_url(id: @line_item)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_line_item_url(@line_item)
+    get edit_line_item_url(id: @line_item)
     assert_response :success
   end
 
   test "should update line_item" do
-    patch line_item_url(@line_item),
-      params: { line_item: { cart_id: @line_item.cart_id, product_id: @line_item.product_id } }
-    assert_redirected_to line_item_url(@line_item)
+    patch line_item_url(id: @line_item),
+      params: { line_item: { product_id: @line_item.product_id } }
+    assert_redirected_to line_item_url(id: @line_item)
   end
 
   test "should destroy line_item" do
     assert_difference("LineItem.count", -1) do
-      delete line_item_url(@line_item)
+      delete line_item_url(id: @line_item)
     end
 
-    assert_redirected_to line_items_url
+    assert_redirected_to store_index_url
   end
 
   test "should create line_item via turbo-stream" do
