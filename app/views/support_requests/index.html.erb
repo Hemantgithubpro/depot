@@ -1,0 +1,42 @@
+<div class="w-full">
+  <h1 class="text-2xl font-bold mb-6">Support Requests</h1>
+
+  <ul class="divide-y divide-gray-200">
+    <% @support_requests.each do |support_request| %>
+      <li class="py-6">
+        <h3 class="text-lg font-semibold">
+          <%= support_request.subject %>
+        </h3>
+        <p class="text-sm text-gray-500 mb-2">
+          From: <%= support_request.email %>
+          <% if support_request.order %>
+            (Order #<%= support_request.order.id %> placed <%= time_ago_in_words(support_request.order.created_at) %> ago)
+          <% end %>
+        </p>
+
+        <p class="mb-4 bg-gray-50 p-3 rounded text-gray-800">
+          <%= support_request.body %>
+        </p>
+
+        <% if support_request.response.present? %>
+          <div class="border-l-4 border-green-500 pl-4 py-2 bg-green-50">
+            <h4 class="font-bold text-sm text-green-900">Our Response:</h4>
+            <%= support_request.response %>
+          </div>
+        <% else %>
+          <%= form_with(model: support_request, class: "space-y-4") do |form| %>
+            <div class="my-2">
+              <%= form.label :response, "Write a response:" %>
+              <%= form.rich_textarea :response, class: "input-field" %>
+            </div>
+
+            <div>
+              <%= form.submit "Send Response",
+                  class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-medium cursor-pointer" %>
+            </div>
+          <% end %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
