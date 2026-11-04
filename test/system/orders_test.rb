@@ -31,6 +31,7 @@ class OrdersTest < ApplicationSystemTestCase
     assert has_field? "PO #"
   end
   test "check order and delivery" do
+    SupportRequest.delete_all
     LineItem.delete_all
     Order.delete_all
     visit store_index_url
